@@ -1,6 +1,6 @@
 //reset
 *{
-    margin: 10px;
+    margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
@@ -12,7 +12,7 @@
 // $numberColour:white;
 // $operators1Colour:white;
 // $operators2Colour:black;
-// $backgroundColour: rgb(203, 180, 203);
+// $backgroundColour: rgb(203, 170, 203);
 $screenColour: white;
 
 //Calculator Design 
@@ -31,5 +31,70 @@ $screenColour: white;
     background-color:$screenColour;
 }
 
+//Calulation Area
+button{
+    border: 1px solid black;
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    border-radius: 50px;
+}
+
+.calculationArea{
+    border: 2px solid red;
+    width: 400px;
+    margin:25px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "upper aside"
+    "number aside";
+}
+
+.operators1{
+    grid-area: upper;
+}
+
+.operators2{
+    grid-area: aside;
+}
+
+.number{
+    grid-area: number;
+}
+
+// Upper-side operators
+.operators1{
+    // border: 1px solid red;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
 
 
+//Number buttons
+.number{
+    // border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+}
+
+.num1to3,
+.num4to6,
+.num7to9,
+.num0andDot{
+    // border: 1px solid black;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+//Side operators 
+.operators2{
+    // border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
