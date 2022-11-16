@@ -1,0 +1,35 @@
+//reset
+*{
+    margin: 10px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+//variables
+// $numbersButtonColour:black;
+// $operators1ButtonColour:orange;
+// $operators2ButtonColour:grey;
+// $numberColour:white;
+// $operators1Colour:white;
+// $operators2Colour:black;
+// $backgroundColour: rgb(203, 180, 203);
+$screenColour: white;
+
+//Calculator Design 
+.calculator{
+    border: 2px solid black;
+    width: 460px;
+    height: 600px;
+}
+
+//Screen Design
+.screen{
+    border: 2px solid black;
+    width: 400px;
+    height: 200px;
+    margin:25px;
+    background-color:$screenColour;
+}
+
+
+

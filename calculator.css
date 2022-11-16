@@ -1,0 +1,19 @@
+* {
+  margin: 10px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.calculator {
+  border: 2px solid black;
+  width: 460px;
+  height: 600px;
+}
+
+.screen {
+  border: 2px solid black;
+  width: 400px;
+  height: 200px;
+  margin: 25px;
+  background-color: white;
+}
