@@ -42,7 +42,6 @@ button{
     border-radius: 50px;
     font-size: 35px;
     font-family:$fontFamily;
-
 }
 
 .calculationArea{
@@ -97,6 +96,9 @@ button{
     justify-content: space-evenly;
 }
 
+#delButton{
+    padding-top: 10px;
+}
 //Side operators 
 .operators2{
     // border: 1px solid red;

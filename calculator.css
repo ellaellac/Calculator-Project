@@ -73,6 +73,10 @@ button {
   justify-content: space-evenly;
 }
 
+#delButton {
+  padding-top: 10px;
+}
+
 .operators2 {
   color: black;
   display: flex;
