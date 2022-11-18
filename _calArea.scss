@@ -1,0 +1,34 @@
+//Calulation Area
+@use "variables" as*;
+button{
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    border-radius: 50px;
+    font-size: 35px;
+    font-family:$fontFamily;
+    box-shadow:1px 4px #000000;
+}
+
+.calculationArea{
+    width: 400px;
+    margin:25px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "upper aside"
+    "number aside";
+}
+
+.operators1{
+    grid-area: upper;
+}
+
+.operators2{
+    grid-area: aside;
+}
+
+.number{
+    grid-area: number;
+}

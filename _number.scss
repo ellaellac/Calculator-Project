@@ -1,0 +1,30 @@
+//Number buttons
+
+@use "variables" as*;
+
+.number{
+    // border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+}
+
+.num1to3,
+.num4to6,
+.num7to9,
+.num0andDot{
+    // border: 1px solid black;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#delButton{
+    padding-top: 10px;
+}
+
+//Number Button--Colour
+.number__button{
+    color:$numberColour;
+    background-color: $numbersButtonColour;
+}
+
