@@ -1,0 +1,16 @@
+// Upper-side operators
+
+@use "variables" as*;
+
+.operators1{
+    // border: 1px solid red;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+//Upper Operators Button--Colour
+.operators1__button{
+    color:$operators1Colour;
+    background-color:$operators1ButtonColour;
+}

@@ -1,0 +1,11 @@
+@use "variables" as*;
+
+//Calculator Design 
+.calculator{
+    border: 2px solid black;
+    width: 460px;
+    height: 750px;
+    background-color:$backgroundColour ;
+    border-radius: 10px;
+    box-shadow:8px 10px #000000;
+}

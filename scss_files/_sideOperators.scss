@@ -1,0 +1,17 @@
+//Side operators 
+
+@use "variables" as*;
+
+.operators2{
+    // border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+//Side Operators Button--Colour
+.operators2__button {
+    color:$operators2Colour;
+    background-color: $operators2ButtonColour;
+}
