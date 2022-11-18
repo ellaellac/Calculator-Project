@@ -10,18 +10,20 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
+    row-gap: 20px;
 }
 
-.userInput{
+#userInput{
     border: 2px solid red;
     height: 50%;
     font-family: $fontFamily;
     font-size: 24px;
 }
 
-.output{
+#output{
     border: 2px solid red;
     width: fit-content;
     font-family: $fontFamily;
-    font-size: 36px;
+    font-size: 48px;
+    align-self: flex-end;
 }
