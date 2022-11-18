@@ -12,20 +12,20 @@ const button9 = document.getElementById("nine");
 
 const getNumberButton = document.querySelectorAll(".number__button");
 const getOperatorButton = document.querySelectorAll(".operatorsButton");
-const outputDisplay = document.getElementById("output");
+const InputDisplay = document.getElementById("userInput");
 
 //JS Functions
 // Register User INPUT (Testing)
 // const changeDisplayText = (event) => {
 //   let valueDisplay = button9.value;
-//   return (outputDisplay.innerText = valueDisplay);
+//   return (InputDisplay.innerText = valueDisplay);
 // };
 // button9.addEventListener("click", changeDisplayText);
 
 // Number Input - Display
 const changeDisplayText = (event) => {
   let valueDisplay = event.target.innerHTML;
-  return (outputDisplay.innerText = valueDisplay);
+  return (InputDisplay.innerText = valueDisplay);
 };
 
 for (let i = 0; i < getNumberButton.length; i++) {
@@ -35,7 +35,7 @@ for (let i = 0; i < getNumberButton.length; i++) {
 //Operators Input - Display
 const changeDisplayText2 = (event) => {
   let valueDisplay = event.target.innerHTML;
-  return (outputDisplay.innerText = valueDisplay);
+  return (InputDisplay.innerText = valueDisplay);
 };
 
 for (let i = 0; i < getOperatorButton.length; i++) {
