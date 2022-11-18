@@ -8,4 +8,20 @@
     background-color:$screenColour;
     border-radius: 10px;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.userInput{
+    border: 2px solid red;
+    height: 50%;
+    font-family: $fontFamily;
+    font-size: 24px;
+}
+
+.output{
+    border: 2px solid red;
+    width: fit-content;
+    font-family: $fontFamily;
+    font-size: 36px;
 }

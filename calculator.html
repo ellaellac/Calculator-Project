@@ -11,10 +11,14 @@
     <div class="calculator">
 
 <!-- Screen -->
-        <div class="screen">Testing</div>
+        <div class="screen">
+            <main class="userInput"> user Input</main>
+            <main class="output"> Answer </main>
+        </div>
 
-        <div class="calculationArea">
+        
 <!-- Upper-side operators -->
+        <div class="calculationArea">
             <div class="operators1">
                 <button class="operators1__button"> AC </button>
                 <button class="operators1__button"> +/- </button>
@@ -44,7 +48,7 @@
                 <div class="num0andDot">
                     <button class="number__button"> 0 </button>
                     <button class="number__button"> . </button>
-                    <button class="number__button"> <img id="delButton"src="delButton.png" alt="Delete Button"> </button>
+                    <button class="number__button delete__button"> <img id="delButton"src="delButton.png" alt="Delete Button"> </button>
                 </div>
             </div>
             
@@ -53,10 +57,13 @@
                 <button class="operators2__button"> ÷ </button>
                 <button class="operators2__button"> × </button>
                 <button class="operators2__button"> -  </button>
-                <button class="operators2__button"> ＋ </button>
-                <button class="operators2__button"> ＝</button>
+                <button class="operators2__button"> + </button>
+                <button class="operators2__button"> = </button>
             </div>
         </div>
     </div> 
+
+    <script src="calculator.js"></script>
+    <script src="testing.js"></script>
 </body>
 </html>
