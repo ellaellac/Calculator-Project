@@ -10,34 +10,35 @@ const button7 = document.getElementById("seven");
 const button8 = document.getElementById("eight");
 const button9 = document.getElementById("nine");
 
-const getNumberButton = document.querySelectorAll(".number__button");
+const getNumberButton = document.querySelectorAll(".numberButton");
 const getOperatorButton = document.querySelectorAll(".operatorsButton");
-const InputDisplay = document.getElementById("userInput");
+const inputDisplay = document.getElementById("userInput");
+const getBackspaceButton = document.getElementById("deleteButton");
 
 //JS Functions
-// Register User INPUT (Testing)
-// const changeDisplayText = (event) => {
-//   let valueDisplay = button9.value;
-//   return (InputDisplay.innerText = valueDisplay);
-// };
-// button9.addEventListener("click", changeDisplayText);
-
 // Number Input - Display
-const changeDisplayText = (event) => {
-  let valueDisplay = event.target.innerHTML;
-  return (InputDisplay.innerText = valueDisplay);
+const addNumToDisplay = (event) => {
+  let valueDisplay = event.target.innerText;
+  return (inputDisplay.innerText += valueDisplay);
 };
 
 for (let i = 0; i < getNumberButton.length; i++) {
-  getNumberButton[i].addEventListener("click", changeDisplayText);
+  getNumberButton[i].addEventListener("click", addNumToDisplay);
 }
 
 //Operators Input - Display
-const changeDisplayText2 = (event) => {
-  let valueDisplay = event.target.innerHTML;
-  return (InputDisplay.innerText = valueDisplay);
+const addOperatorsToDisplay = (event) => {
+  let valueDisplay = event.target.innerText;
+  return (inputDisplay.innerText += valueDisplay);
 };
 
 for (let i = 0; i < getOperatorButton.length; i++) {
-  getOperatorButton[i].addEventListener("click", changeDisplayText2);
+  getOperatorButton[i].addEventListener("click", addOperatorsToDisplay);
 }
+// Backspace Button
+const backspaceFunction = () => {
+  let deleteLastInput = inputDisplay.innerText.slice(0, -1);
+  return (inputDisplay.innerText = deleteLastInput);
+};
+
+getBackspaceButton.addEventListener("click", backspaceFunction);
