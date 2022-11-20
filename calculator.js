@@ -16,6 +16,7 @@ const inputDisplay = document.getElementById("userInput");
 const outputDisplay = document.getElementById("output");
 const backspaceButton = document.getElementById("deleteButton");
 const decimalButton = document.getElementById("dot");
+const allClearButton = document.getElementById("allClearButton");
 
 //JS Functions
 // Number Input - Display
@@ -61,5 +62,13 @@ const decimalRestriction = (event) => {
 };
 
 decimalButton.addEventListener("click", decimalRestriction);
+
+//AC Button
+const allClearFunction = () => {
+  outputDisplay.innerText = "0";
+  inputDisplay.innerText = "";
+};
+
+allClearButton.addEventListener("click", allClearFunction);
 
 //
