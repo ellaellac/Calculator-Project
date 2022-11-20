@@ -17,6 +17,7 @@ const outputDisplay = document.getElementById("output");
 const backspaceButton = document.getElementById("deleteButton");
 const decimalButton = document.getElementById("dot");
 const allClearButton = document.getElementById("allClearButton");
+const percentageButton = document.getElementById("percentageButton");
 
 //JS Functions
 // Number Input - Display
@@ -70,5 +71,13 @@ const allClearFunction = () => {
 };
 
 allClearButton.addEventListener("click", allClearFunction);
+
+//% Button
+const numberToPercentage = () => {
+  let getNumber = Number(outputDisplay.innerText);
+  outputDisplay.innerText = getNumber * 0.01;
+};
+
+percentageButton.addEventListener("click", numberToPercentage);
 
 //
