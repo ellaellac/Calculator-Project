@@ -12,8 +12,8 @@ const button9 = document.getElementById("nine");
 
 const numberButton = document.querySelectorAll(".numberButton");
 const operatorButton = document.querySelectorAll(".operatorsButton");
-const inputDisplay = document.getElementById("userInput");
 const outputDisplay = document.getElementById("output");
+const inputDisplay = document.getElementById("userInput");
 const backspaceButton = document.getElementById("deleteButton");
 const decimalButton = document.getElementById("dot");
 const allClearButton = document.getElementById("allClearButton");
@@ -23,10 +23,10 @@ const percentageButton = document.getElementById("percentageButton");
 // Number Input - Display
 const addNumToDisplay = (event) => {
   let valueDisplay = event.target.innerText;
-  if (outputDisplay.innerText == "0") {
-    outputDisplay.innerText = valueDisplay;
+  if (inputDisplay.innerText == "0") {
+    inputDisplay.innerText = valueDisplay;
   } else {
-    outputDisplay.innerText += valueDisplay;
+    inputDisplay.innerText += valueDisplay;
   }
 };
 
@@ -36,9 +36,9 @@ for (let i = 0; i < numberButton.length; i++) {
 
 //Operators - Update Display
 const OperatorsUpdateDisplay = (event) => {
-  inputDisplay.innerText = outputDisplay.innerText;
-  if ((inputDisplay.innerText = outputDisplay.innerText)) {
-    outputDisplay.innerText = "";
+  outputDisplay.innerText = inputDisplay.innerText;
+  if ((outputDisplay.innerText = inputDisplay.innerText)) {
+    inputDisplay.innerText = "";
   }
 };
 
@@ -48,8 +48,8 @@ for (let i = 0; i < operatorButton.length; i++) {
 
 // Backspace Button
 const backspaceFunction = () => {
-  let deleteLastInput = outputDisplay.innerText.slice(0, -1);
-  return (outputDisplay.innerText = deleteLastInput);
+  let deleteLastInput = inputDisplay.innerText.slice(0, -1);
+  return (inputDisplay.innerText = deleteLastInput);
 };
 
 backspaceButton.addEventListener("click", backspaceFunction);
@@ -57,8 +57,8 @@ backspaceButton.addEventListener("click", backspaceFunction);
 //decimal "." button
 const decimalRestriction = (event) => {
   let decimalDisplay = event.target.innerText;
-  if (!outputDisplay.innerText.includes(".")) {
-    outputDisplay.innerText += ".";
+  if (!inputDisplay.innerText.includes(".")) {
+    inputDisplay.innerText += ".";
   }
 };
 
@@ -66,16 +66,16 @@ decimalButton.addEventListener("click", decimalRestriction);
 
 //AC Button
 const allClearFunction = () => {
-  outputDisplay.innerText = "0";
-  inputDisplay.innerText = "";
+  inputDisplay.innerText = "0";
+  outputDisplay.innerText = "";
 };
 
 allClearButton.addEventListener("click", allClearFunction);
 
 //% Button
 const numberToPercentage = () => {
-  let getNumber = Number(outputDisplay.innerText);
-  outputDisplay.innerText = getNumber * 0.01;
+  let getNumber = Number(inputDisplay.innerText);
+  inputDisplay.innerText = getNumber * 0.01;
 };
 
 percentageButton.addEventListener("click", numberToPercentage);

@@ -27,14 +27,14 @@
   row-gap: 20px;
 }
 
-#userInput {
+#output {
   border: 2px solid red;
   height: 50%;
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-size: 32px;
 }
 
-#output {
+#userInput {
   border: 2px solid red;
   width: fit-content;
   font-family: "M PLUS Rounded 1c", sans-serif;
