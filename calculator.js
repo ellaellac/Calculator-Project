@@ -10,35 +10,56 @@ const button7 = document.getElementById("seven");
 const button8 = document.getElementById("eight");
 const button9 = document.getElementById("nine");
 
-const getNumberButton = document.querySelectorAll(".numberButton");
-const getOperatorButton = document.querySelectorAll(".operatorsButton");
+const numberButton = document.querySelectorAll(".numberButton");
+const operatorButton = document.querySelectorAll(".operatorsButton");
 const inputDisplay = document.getElementById("userInput");
-const getBackspaceButton = document.getElementById("deleteButton");
+const outputDisplay = document.getElementById("output");
+const backspaceButton = document.getElementById("deleteButton");
+const decimalButton = document.getElementById("dot");
 
 //JS Functions
 // Number Input - Display
 const addNumToDisplay = (event) => {
   let valueDisplay = event.target.innerText;
-  return (inputDisplay.innerText += valueDisplay);
+  if (outputDisplay.innerText == "0") {
+    outputDisplay.innerText = valueDisplay;
+  } else {
+    outputDisplay.innerText += valueDisplay;
+  }
 };
 
-for (let i = 0; i < getNumberButton.length; i++) {
-  getNumberButton[i].addEventListener("click", addNumToDisplay);
+for (let i = 0; i < numberButton.length; i++) {
+  numberButton[i].addEventListener("click", addNumToDisplay);
 }
 
-//Operators Input - Display
-const addOperatorsToDisplay = (event) => {
-  let valueDisplay = event.target.innerText;
-  return (inputDisplay.innerText += valueDisplay);
+//Operators - Update Display
+const OperatorsUpdateDisplay = (event) => {
+  inputDisplay.innerText = outputDisplay.innerText;
+  if ((inputDisplay.innerText = outputDisplay.innerText)) {
+    outputDisplay.innerText = "";
+  }
 };
 
-for (let i = 0; i < getOperatorButton.length; i++) {
-  getOperatorButton[i].addEventListener("click", addOperatorsToDisplay);
+for (let i = 0; i < operatorButton.length; i++) {
+  operatorButton[i].addEventListener("click", OperatorsUpdateDisplay);
 }
+
 // Backspace Button
 const backspaceFunction = () => {
-  let deleteLastInput = inputDisplay.innerText.slice(0, -1);
-  return (inputDisplay.innerText = deleteLastInput);
+  let deleteLastInput = outputDisplay.innerText.slice(0, -1);
+  return (outputDisplay.innerText = deleteLastInput);
 };
 
-getBackspaceButton.addEventListener("click", backspaceFunction);
+backspaceButton.addEventListener("click", backspaceFunction);
+
+//decimal "." button
+const decimalRestriction = (event) => {
+  let decimalDisplay = event.target.innerText;
+  if (!outputDisplay.innerText.includes(".")) {
+    outputDisplay.innerText += ".";
+  }
+};
+
+decimalButton.addEventListener("click", decimalRestriction);
+
+//
