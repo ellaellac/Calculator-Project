@@ -1,15 +1,4 @@
 //JS - variables
-const button0 = document.getElementById("zero");
-const button1 = document.getElementById("one");
-const button2 = document.getElementById("two");
-const button3 = document.getElementById("three");
-const button4 = document.getElementById("four");
-const button5 = document.getElementById("five");
-const button6 = document.getElementById("six");
-const button7 = document.getElementById("seven");
-const button8 = document.getElementById("eight");
-const button9 = document.getElementById("nine");
-
 const numberButton = document.querySelectorAll(".numberButton");
 const operatorButton = document.querySelectorAll(".operatorsButton");
 const outputDisplay = document.getElementById("output");
@@ -18,6 +7,7 @@ const backspaceButton = document.getElementById("deleteButton");
 const decimalButton = document.getElementById("dot");
 const allClearButton = document.getElementById("allClearButton");
 const percentageButton = document.getElementById("percentageButton");
+const equalButton = document.getElementById("#equalButton");
 
 //JS Functions
 // Number Input - Display
@@ -32,18 +22,6 @@ const addNumToDisplay = (event) => {
 
 for (let i = 0; i < numberButton.length; i++) {
   numberButton[i].addEventListener("click", addNumToDisplay);
-}
-
-//Operators - Update Display
-const OperatorsUpdateDisplay = (event) => {
-  outputDisplay.innerText = inputDisplay.innerText;
-  if ((outputDisplay.innerText = inputDisplay.innerText)) {
-    inputDisplay.innerText = "";
-  }
-};
-
-for (let i = 0; i < operatorButton.length; i++) {
-  operatorButton[i].addEventListener("click", OperatorsUpdateDisplay);
 }
 
 // Backspace Button
@@ -80,4 +58,55 @@ const numberToPercentage = () => {
 
 percentageButton.addEventListener("click", numberToPercentage);
 
-//
+//Calculation
+let previousOperator = null;
+
+const operationFunction = (event) => {
+  let inputNum = parseFloat(inputDisplay.innerText);
+  let outputNum = parseFloat(outputDisplay.innerText);
+  let currentOperator = event.target.innerText;
+
+  console.log(outputNum, inputNum, currentOperator, previousOperator);
+
+  // if input doesn't has any value
+  if (isNaN(inputNum)) {
+    previousOperator = currentOperator;
+    // only input has value
+  } else if (isNaN(outputNum)) {
+    outputDisplay.innerText = inputNum;
+    inputDisplay.innerText = "";
+    previousOperator = currentOperator;
+    // both output and input have values
+  } else {
+    switch (previousOperator) {
+      case "+":
+        answer = outputNum + inputNum;
+        break;
+      case "-":
+        answer = outputNum - inputNum;
+        break;
+      case "x":
+        answer = outputNum * inputNum;
+        break;
+      case "÷":
+        answer = outputNum / inputNum;
+        break;
+    }
+    outputDisplay.innerText = answer;
+    inputDisplay.innerText = "";
+    previousOperator = currentOperator;
+  }
+};
+for (let i = 0; i < operatorButton.length; i++) {
+  operatorButton[i].addEventListener("click", operationFunction);
+}
+
+//Equal Button
+
+const handleEqualFunction = (event) => {
+  let outputNum = parseFloat(outputDisplay.innerText);
+  let inputNum = parseFloat(inputDisplay.innerText);
+
+  if (isNaN(inputNum)) {
+  }
+};
