@@ -1,7 +1,7 @@
 //Screen Design
 @use "variables" as*;
 .screen{
-    border: 2px solid black;
+    border: 5px solid black;
     width: 400px;
     height: 200px;
     margin:25px;
@@ -11,17 +11,18 @@
     display: flex;
     flex-direction: column;
     row-gap: 20px;
+    box-shadow: 3px 3px grey;
 }
 
 #output{
     height: 50%;
     font-family: $fontFamily;
-    font-size: 32px;
+    font-size: $outputFont;
 }
 
 #userInput{
     width: fit-content;
     font-family: $fontFamily;
-    font-size: 48px;
+    font-size: $inputFont;
     align-self: flex-end;
 }
