@@ -6,7 +6,7 @@
 }
 
 .calculator {
-  margin: 10px;
+  margin: 50px;
   border: 2px solid black;
   width: 460px;
   height: 750px;
@@ -119,8 +119,33 @@ button {
   background-color: grey;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
   .calculator {
-    margin: 50px;
+    margin: 10px;
+    width: 350px;
+    height: 570px;
+  }
+
+  .screen {
+    width: 300px;
+    height: 152px;
+  }
+
+  .calculationArea {
+    width: 300px;
+  }
+
+  button {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+  }
+
+  #output {
+    font-size: 32px;
+  }
+
+  #userInput {
+    font-size: 48px;
   }
 }

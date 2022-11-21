@@ -6,10 +6,4 @@
 @use "./scss_files/_upperOperators";
 @use "./scss_files/_number";
 @use "./scss_files/_sideOperators";
-
-
-@media screen and (min-width:768px){
-    .calculator{
-    margin: 50px;
-    }
-}
+@use "./scss_files/_media";
