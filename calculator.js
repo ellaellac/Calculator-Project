@@ -7,7 +7,7 @@ const backspaceButton = document.getElementById("deleteButton");
 const decimalButton = document.getElementById("dot");
 const allClearButton = document.getElementById("allClearButton");
 const percentageButton = document.getElementById("percentageButton");
-const equalButton = document.getElementById("#equalButton");
+const equalButton = document.getElementById("equalButton");
 
 //JS Functions
 // Number Input - Display
@@ -46,6 +46,7 @@ decimalButton.addEventListener("click", decimalRestriction);
 const allClearFunction = () => {
   inputDisplay.innerText = "0";
   outputDisplay.innerText = "";
+  previousOperator = null;
 };
 
 allClearButton.addEventListener("click", allClearFunction);
@@ -78,25 +79,31 @@ const operationFunction = (event) => {
     previousOperator = currentOperator;
     // both output and input have values
   } else {
-    switch (previousOperator) {
-      case "+":
-        answer = outputNum + inputNum;
-        break;
-      case "-":
-        answer = outputNum - inputNum;
-        break;
-      case "x":
-        answer = outputNum * inputNum;
-        break;
-      case "÷":
-        answer = outputNum / inputNum;
-        break;
-    }
-    outputDisplay.innerText = answer;
+    outputDisplay.innerText = getAnswer(outputNum, inputNum);
     inputDisplay.innerText = "";
     previousOperator = currentOperator;
   }
 };
+
+// Answer Function
+const getAnswer = (outputNum, inputNum) => {
+  switch (previousOperator) {
+    case "+":
+      answer = outputNum + inputNum;
+      break;
+    case "-":
+      answer = outputNum - inputNum;
+      break;
+    case "x":
+      answer = outputNum * inputNum;
+      break;
+    case "÷":
+      answer = outputNum / inputNum;
+      break;
+  }
+  return answer;
+};
+
 for (let i = 0; i < operatorButton.length; i++) {
   operatorButton[i].addEventListener("click", operationFunction);
 }
@@ -104,9 +111,20 @@ for (let i = 0; i < operatorButton.length; i++) {
 //Equal Button
 
 const handleEqualFunction = (event) => {
-  let outputNum = parseFloat(outputDisplay.innerText);
   let inputNum = parseFloat(inputDisplay.innerText);
+  let outputNum = parseFloat(outputDisplay.innerText);
 
-  if (isNaN(inputNum)) {
+  if (isNaN(outputNum)) {
+    //pass
+  } else if (isNaN(inputNum)) {
+    inputDisplay.innerText = outputNum;
+    outputDisplay.innerText = "";
+  } else {
+    outputDisplay.innerText = "";
+    inputDisplay.innerText = getAnswer(outputNum, inputNum);
   }
 };
+
+equalButton.addEventListener("click", handleEqualFunction);
+
+//
