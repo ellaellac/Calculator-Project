@@ -8,6 +8,7 @@ const decimalButton = document.getElementById("dot");
 const allClearButton = document.getElementById("allClearButton");
 const percentageButton = document.getElementById("percentageButton");
 const equalButton = document.getElementById("equalButton");
+const signButton = document.getElementById("signButton");
 
 //JS Functions
 // Number Input - Display
@@ -127,4 +128,15 @@ const handleEqualFunction = (event) => {
 
 equalButton.addEventListener("click", handleEqualFunction);
 
-//
+//Sign Button
+const handleSignBtn = (event) => {
+  if (inputDisplay.innerText.startsWith("-")) {
+    inputDisplay.innerText = inputDisplay.innerText.slice(1);
+  } else if (inputDisplay.innerText == "0") {
+    //pass
+  } else {
+    inputDisplay.innerText = "-" + inputDisplay.innerText;
+  }
+};
+
+signButton.addEventListener("click", handleSignBtn);
