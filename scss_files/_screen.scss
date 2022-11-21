@@ -13,15 +13,13 @@
     row-gap: 20px;
 }
 
-#userInput{
-    border: 2px solid red;
+#output{
     height: 50%;
     font-family: $fontFamily;
     font-size: 32px;
 }
 
-#output{
-    border: 2px solid red;
+#userInput{
     width: fit-content;
     font-family: $fontFamily;
     font-size: 48px;
