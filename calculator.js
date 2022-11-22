@@ -102,6 +102,12 @@ const getAnswer = (outputNum, inputNum) => {
       answer = outputNum / inputNum;
       break;
   }
+  //Error = Infinity/ -Infinity / NaN
+  if (!isFinite(answer)) {
+    alert("error!");
+    return "";
+  }
+
   return answer;
 };
 
