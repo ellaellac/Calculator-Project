@@ -38,7 +38,6 @@ backspaceButton.addEventListener("click", backspaceFunction);
 
 //decimal "." button
 const decimalRestriction = (event) => {
-  let decimalDisplay = event.target.innerText;
   if (!inputDisplay.innerText.includes(".")) {
     inputDisplay.innerText += ".";
   }
