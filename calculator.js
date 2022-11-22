@@ -16,6 +16,9 @@ const addNumToDisplay = (event) => {
   let valueDisplay = event.target.innerText;
   if (inputDisplay.innerText == "0") {
     inputDisplay.innerText = valueDisplay;
+  } //Error - Length of Input Values
+  else if (inputDisplay.innerText.length >= 9) {
+    alert("Max. number reached!");
   } else {
     inputDisplay.innerText += valueDisplay;
   }
@@ -107,8 +110,7 @@ const getAnswer = (outputNum, inputNum) => {
     alert("error!");
     return "";
   }
-
-  return answer;
+  return answer.toString().substring(0, 9);
 };
 
 for (let i = 0; i < operatorButton.length; i++) {
