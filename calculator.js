@@ -58,7 +58,8 @@ allClearButton.addEventListener("click", allClearFunction);
 //% Button
 const numberToPercentage = () => {
   let getNumber = Number(inputDisplay.innerText);
-  inputDisplay.innerText = getNumber * 0.01;
+  let percentageValue = getNumber * 0.01;
+  return (inputDisplay.innerText = percentageValue.toFixed(7));
 };
 
 percentageButton.addEventListener("click", numberToPercentage);
