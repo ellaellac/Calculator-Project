@@ -10,6 +10,14 @@ button{
     box-shadow:1px 4px #000000;
 }
 
+button:hover{
+    cursor: pointer;
+}
+
+button:active{
+    transform: scale(0.95);
+}
+
 .calculationArea{
     width: 400px;
     margin:25px;
