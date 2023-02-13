@@ -1,7 +1,5 @@
 # Calculator-Project
 
-<img src="./calculator-preview.svg" width="500"/>
-
 # The goals for this project:
 
 1.  A working Calculator:
